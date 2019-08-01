@@ -7,4 +7,5 @@ for i in lx:
         a1.append(i ** 2 + j ** 2)
 a1 = sorted(a1) # a1をソート
 a1 = list(set(a1)) # a1の重複を除去
-print(a1 if a1 <= 30) # 30以下の格子点間距離を表示
+print([c for c in a1 if c <= 50]) # n<51(nは整数)の格子点間距離を表示
+print(a1)
