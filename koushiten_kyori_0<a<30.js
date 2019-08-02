@@ -16,14 +16,18 @@ for (var h=0;h<30;h++){
     ly.push(h);
 }
 var a1 = [];
-for (var i in lx){
-    for (var j in ly){
-        a1.push(Math.pow(i, 2) + Math.pow(j, 2));
-var a2 = a1.sort(function () {return a - b});
+for (var i=0;i<lx.length;i++){
+    for (var j=0;j<ly.length;j++){
+        a1.push(Math.pow(lx[i], 2) + Math.pow(ly[j], 2));
+    }
+}
+var a2 = a1.sort(function (a, b) {return a - b});
 var a3 = [];
 var ct1 = 0;
 while (a2[ct1] <= 50){
     a3.push(a2[ct1]);
     ct1 ++;
 }
-console.log(a3);
+var a4 = a3.filter(function (x, i, self) {return self.indexOf(x) === i}); //重複を除去
+console.log(a4); //重複なしのリスト
+console.log(a3); //重複ありのリスト
