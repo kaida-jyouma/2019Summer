@@ -12,8 +12,8 @@ print("全リスト\n", "\rn = {", ", ".join(list(map(str, a1))), "}",end="\n\n"
 var lx = [];
 var ly = [];
 for (var h=0;h<30;h++){
-    lx.push(h);
-    ly.push(h);
+    lx.push(h + 1);
+    ly.push(h + 1);
 }
 var a1 = [];
 for (var i=0;i<lx.length;i++){
