@@ -1,13 +1,11 @@
-# xy平面上の格子点距離を求める(1辺の長さが1~30までの整数値で、可変。)
-lx = [c for c in range(31) if c != 0] # 平面の三角形の底辺を求める(1〜30までの数列)
-ly = [c for c in range(31) if c != 0] # 平面の三角形の高さを求める(1〜30までの数列)
-lz = [c for c in range(31) if c != 0] # 平面の三角形の高さを求める(1〜30までの数列)
+l = [1, 2, 3, 4, 5, 6, 7, 8, 10, 13, 17, 18, 20, 25, 26, 29, 32, 34, 37, 40, 41, 45, 50] # 平面上の格子点間距離
+m = [c for c in range(0, 9, 1)]
+al01 = []
+for i in l:
+    for j in m:
+        al01.append(i + j ** 2)
+print([c for c in list(set(sorted(al01))) if c <= 30], len([c for c in list(set(sorted(al01))) if c <= 30]))
 
-a1 = [] # 答えのリスト
-for i in lx:
-    for j in ly:
-        for k in lz:
-            a1.append((i ** 2 + j ** 2) + k ** 2)
-a1 = sorted(a1)
-a1 = list(set(a1))
-print(a1)
+# 以下 出力を記載
+
+# [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] 30
